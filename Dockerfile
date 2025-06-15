@@ -1,14 +1,20 @@
 # Use an official OpenJDK base image (Java 17)
-FROM openjdk:17-jdk-alpine 
+FROM eclipse-temurin:17-jdk
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy Maven wrapper and the project files
-COPY target/backend-0.0.1-SNAPSHOT.jar app.jar
+COPY . .
 
+# Make mvnw executable
+RUN chmod +x mvnw
+
+# Build the application
+RUN ./mvnw clean package -DskipTests
+
+# Expose the port your Spring Boot app runs on
 EXPOSE 8081
 
-
 # Run the jar file (this pattern picks the jar automatically)
-CMD ["java","-jar","app.jar"]
+CMD ["sh", "-c", "java -jar target/*.jar"]
