@@ -21,3 +21,4 @@ public class Expense {
 
     private String userEmail; // 🔐 To map expense to the logged-in user
 }
+
