@@ -41,7 +41,7 @@ public class AuthController {
         String hashedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
         userRepository.save(user);
-        return ResponseEntity.ok("User registered successfully.");
+        return ResponseEntity.ok("User registered  successfully.");
     }
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
@@ -51,7 +51,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
     }
 
-    User user = userOptional.get();
+    User user = userOptional.get();   
 
     if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
