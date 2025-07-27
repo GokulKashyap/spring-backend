@@ -62,6 +62,7 @@ public CorsConfigurationSource corsConfigurationSource() {
         "https://jazzy-chebakia-c73f70.netlify.app"          // Netlify deployed frontend
     ));
     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    config.setExposedHeaders(List.of("Authorization"));
     config.setAllowedHeaders(List.of("*"));
     config.setAllowCredentials(true);
 
