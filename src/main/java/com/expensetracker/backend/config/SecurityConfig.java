@@ -41,17 +41,35 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    @Bean
+//     @Bean
+// public CorsConfigurationSource corsConfigurationSource() {
+//     CorsConfiguration config = new CorsConfiguration();
+//     config.setAllowedOrigins(List.of("http://localhost:5173")); // ✅ Local frontend origin
+//     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+//     config.setAllowedHeaders(List.of("*"));
+//     config.setAllowCredentials(true); // Required if sending cookies or Authorization headers
+
+//     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//     source.registerCorsConfiguration("/**", config);
+//     return source;
+// }
+
+@Bean
 public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration config = new CorsConfiguration();
-    config.setAllowedOrigins(List.of("http://localhost:5173")); // ✅ Local frontend origin
+    config.setAllowedOrigins(List.of(
+        "http://localhost:5173",                             // Local development
+        "https://jazzy-chebakia-c73f70.netlify.app"          // Netlify deployed frontend
+    ));
     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
     config.setAllowedHeaders(List.of("*"));
-    config.setAllowCredentials(true); // Required if sending cookies or Authorization headers
+    config.setAllowCredentials(true);
 
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", config);
     return source;
 }
+
+
 
 }

@@ -1,0 +1,14 @@
+com\expensetracker\backend\dto\LoginRequest.class
+com\expensetracker\backend\repository\ExpenseRepository.class
+com\expensetracker\backend\dto\ExpenseRequest.class
+com\expensetracker\backend\entity\Expense.class
+com\expensetracker\backend\repository\UserRepository.class
+com\expensetracker\backend\entity\User$UserBuilder.class
+com\expensetracker\backend\config\JwtFilter.class
+com\expensetracker\backend\entity\User.class
+com\expensetracker\backend\controller\ExpenseController.class
+com\expensetracker\backend\config\SecurityConfig.class
+com\expensetracker\backend\controller\AuthController.class
+com\expensetracker\backend\utils\JwtUtil.class
+com\expensetracker\backend\entity\Expense$ExpenseBuilder.class
+com\expensetracker\backend\ExpenseTrackerApplication.class
