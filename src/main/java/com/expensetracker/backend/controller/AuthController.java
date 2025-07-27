@@ -19,7 +19,6 @@ import com.expensetracker.backend.utils.JwtUtil;
 @RestController
 
 @RequestMapping("/api/auth")
-@CrossOrigin
 public class AuthController {
     @Autowired
     private UserRepository userRepository;

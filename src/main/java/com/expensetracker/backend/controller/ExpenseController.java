@@ -14,7 +14,6 @@ import com.expensetracker.backend.repository.ExpenseRepository;
 
 @RestController
 @RequestMapping("/expenses")
-@CrossOrigin
 public class ExpenseController {
 
     @Autowired 
