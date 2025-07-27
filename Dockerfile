@@ -1,12 +1,14 @@
-# Stage 1: Build the JAR using Maven
-FROM maven:3.8.4-openjdk-17-slim AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
-
-# Stage 2: Run the JAR using JRE
+# Use OpenJDK image
 FROM openjdk:17-jdk-slim
+
+# Set working directory
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+
+# Copy JAR file into container
+COPY target/*.jar app.jar
+
+# Expose the port your app runs on
 EXPOSE 8081
+
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
