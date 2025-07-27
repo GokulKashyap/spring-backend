@@ -59,7 +59,7 @@ public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration config = new CorsConfiguration();
     config.setAllowedOrigins(List.of(
         "http://localhost:5173",                             // Local development
-        "https://jazzy-chebakia-c73f70.netlify.app"          // Netlify deployed frontend
+        "https://rupeerecord.netlify.app"          // Netlify deployed frontend
     ));
     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
     config.setExposedHeaders(List.of("Authorization"));
